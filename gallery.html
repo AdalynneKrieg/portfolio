@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+  <html>
+      <head>
+          <title>Gallery, Adalynne Krieg</title>
+            <style>
+              .image-gallery {
+                display: flex; /* Arrange items in a row or wrap to multiple rows */
+                flex-wrap: wrap; /* Allows items to wrap to the next line if they don't fit */
+                justify-content: space-evenly; /* Distribute space evenly around items */
+                padding: 20px;
+              }
+          
+              .gallery-item {
+                margin: 10px; /* Adjust this value for the margins between images */
+                cursor: pointer; /* Change the cursor to a pointer to show it's clickable */
+              }
+          
+              .gallery-item img {
+                max-width: 200px; /* Adjust the size of the small images */
+                height: auto;
+                display: block; /* Remove extra space below images */
+              }
+          
+              .image-description {
+                display: none; /* Initially hide the descriptions */
+              }
+          
+              .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place even when scrolling */
+                z-index: 1; /* Sit on top of everything else */
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto; /* Enable scroll if image is too big */
+                background-color: rgba(0, 0, 0, 0.9); /* Dark background with some transparency */
+              }
+          
+              .modal-content {
+                margin: auto;
+                display: block;
+                max-width: 80%;
+                max-height: 80%;
+              }
+          
+              #modalDescription {
+                margin: auto;
+                padding: 20px;
+                width: 80%;
+                text-align: center;
+                color: white;
+              }
+          
+              .close-button {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                cursor: pointer;
+              }
+            </style>
+      </head>
+
+      <body>
+          
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="https://lh5.googleusercontent.com/6xYwE9boOOpoN-POctxgt8uNA7azR8Q931W4KsFY4m7c3
+                      Aie9z7ZIS45ePY5abrKxZ0JlaZO46BZgBRVQA9biYWr7vJE5kKlvlvl3PQDEQNlACm3xDO7xQ3ipfjqmPHjJw=w1280" alt="Pencil sketch of a womans back with tattooed wings">
+            <div class="image-description">This is a description of the first piece of art.</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://lh6.googleusercontent.com/XbOuuje7AvqogRizwgV5B1Du-7wnKc6IQ5uWuhcx-GlceS3
+                      h5lmm68NXfxfc6wTgLNSoimtF-mHIoc8yU8VpnfRHd7MIMt0jaAXtPbGrRDmIaPbx0VFp5XuDF17CMjGJpg=w1280" alt="Graphite drawing of elderly woman wearing sunglasses">
+            <div class="image-description">Here's some info about the second artwork.</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://lh4.googleusercontent.com/nXkRZAi-jToZGycNwVM4xg0aAkvwzrDeyAF5DQVsPe7kt_5
+                      R9ncV-xRwfvefw5AbOUg_bxsanYSqPzXpFHc7kOzwO0QuKYyGBMc-LPu8OG9m-1uV2RqHBV476R2OnF8sbA=w1280" alt="India ink drawing of alienesque creature 
+                                                                                                                      with spirals emerging from its head">
+            <div class="image-description">Details about the third masterpiece.</div>
+          </div>
+          </div>
+      
+        <div id="imageModal" class="modal">
+          <span class="close-button">&times;</span>
+          <img class="modal-content" id="modalImage">
+          <div id="modalDescription"></div>
+        </div>
+
+                                <script>
+                                  const galleryItems = document.querySelectorAll('.gallery-item');
+                                  const modal = document.getElementById('imageModal');
+                                  const modalImage = document.getElementById('modalImage');
+                                  const modalDescription = document.getElementById('modalDescription');
+                                  const closeButton = document.querySelector('.close-button');
+                              
+                                  galleryItems.forEach(item => {
+                                    item.addEventListener('click', () => {
+                                      const imageSrc = item.querySelector('img').src;
+                                      const description = item.querySelector('.image-description').textContent;
+                              
+                                      modalImage.src = imageSrc;
+                                      modalDescription.textContent = description;
+                                      modal.style.display = 'block'; // Show the modal
+                                    });
+                                  });
+                              
+                                  closeButton.addEventListener('click', () => {
+                                    modal.style.display = 'none'; // Hide the modal
+                                  });
+                              
+                                  // Close the modal if the user clicks outside of it
+                                  window.addEventListener('click', (event) => {
+                                    if (event.target === modal) {
+                                      modal.style.display = 'none';
+                                    }
+                                  });
+                                </script>
+  
+      </body>
+  </html>
