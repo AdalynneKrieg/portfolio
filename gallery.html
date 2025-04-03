@@ -1,121 +1,135 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
   <html>
-      <head>
-          <title>Gallery, Adalynne Krieg</title>
-            <style>
-              .image-gallery {
-                display: flex; 
-                flex-wrap: wrap; 
-                justify-content: space-evenly; 
-                padding: 20px;
-              }
-          
-              .gallery-item {
-                margin: 10px; 
-                cursor: pointer; 
-              }
-          
-              .gallery-item img {
-                max-width: 500px; 
-                height: auto;
-                display: block; 
-              }
-          
-              .image-description {
-                display: none; 
-              }
-          
-              .modal {
-                display: none; 
-                position: fixed; 
-                z-index: 1; 
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto; 
-                background-color: rgba(0, 0, 0, 0.9); 
-              }
-          
-              .modal-content {
-                margin: auto;
-                display: block;
-                max-width: 80%;
-                max-height: 80%;
-              }
-          
-              #modalDescription {
-                margin: auto;
-                padding: 20px;
-                width: 80%;
-                text-align: center;
-                color: white;
-              }
-          
-              .close-button {
-                position: absolute;
-                top: 15px;
-                right: 35px;
-                color: #f1f1f1;
-                font-size: 40px;
-                font-weight: bold;
-                cursor: pointer;
-              }
-            </style>
-      </head>
+        <head>
+        <title>Gallery, Adalynne Krieg</title>
+        <style>
+          .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+          }
+      
+          .gallery-item {
+            margin: 10px;
+            cursor: pointer;
+          }
+      
+          .gallery-item img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+          }
+      
+          .image-description {
+            display: none;
+          }
+      
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+          }
+      
+          .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+          }
+      
+          #modalDescription {
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+            color: white;
+          }
+      
+          .close-button {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+      
+          /* CSS for stacking the images */
+          .stacked-images {
+            position: relative;
+          }
+      
+          .stacked-images img {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        </style>
+        </head>
 
-      <body>
-          
+    <body>
         <div class="image-gallery">
-          <div class="gallery-item">
-            <img src="images/backtat.JPG" alt="Pencil sketch of a womans back with tattooed wings">
-            <div class="image-description">Graphite Pencil</div>
+          <div class="gallery-item stacked-images">
+                <img src="images/skellyhead.JPG" alt="Skelly Head">
+                <img src="images/skellybody.JPG" alt="Skelly Body">
+                <div class="image-description">Skelly!</div>
           </div>
           <div class="gallery-item">
-            <img src="images/oldlady.JPG" alt="Graphite drawing of elderly woman wearing sunglasses">
-            <div class="image-description">Graphite Pencil and Charcoal</div>
+                <img src="images/backtat.JPG" alt="Pencil sketch of a womans back with tattooed wings">
+                <div class="image-description">Graphite Pencil</div>
           </div>
           <div class="gallery-item">
-            <img src="images/noor.JPG" alt="Woman bundled in white puffer coat with sunglasses and Michigan beanie">
-            <div class="image-description">India Ink, Dip Fountain Pen</div>
+                <img src="images/oldlady.JPG" alt="Graphite drawing of elderly woman wearing sunglasses">
+                <div class="image-description">Graphite Pencil and Charcoal</div>
           </div>
+          <div class="gallery-item">
+                <img src="images/noor.JPG" alt="Woman bundled in white puffer coat with sunglasses and Michigan beanie">
+                <div class="image-description">Colored Pencil, Graphite Pencil</div>
           </div>
+        </div>
       
         <div id="imageModal" class="modal">
           <span class="close-button">&times;</span>
           <img class="modal-content" id="modalImage">
           <div id="modalDescription"></div>
         </div>
-
-                                <script>
-                                  const galleryItems = document.querySelectorAll('.gallery-item');
-                                  const modal = document.getElementById('imageModal');
-                                  const modalImage = document.getElementById('modalImage');
-                                  const modalDescription = document.getElementById('modalDescription');
-                                  const closeButton = document.querySelector('.close-button');
-                              
-                                  galleryItems.forEach(item => {
-                                    item.addEventListener('click', () => {
-                                      const imageSrc = item.querySelector('img').src;
-                                      const description = item.querySelector('.image-description').textContent;
-                              
-                                      modalImage.src = imageSrc;
-                                      modalDescription.textContent = description;
-                                      modal.style.display = 'block'; // Show the modal
-                                    });
-                                  });
-                              
-                                  closeButton.addEventListener('click', () => {
-                                    modal.style.display = 'none'; // Hide the modal
-                                  });
-                              
-                                  // Close the modal if the user clicks outside of it
-                                  window.addEventListener('click', (event) => {
-                                    if (event.target === modal) {
-                                      modal.style.display = 'none';
-                                    }
-                                  });
-                                </script>
-  
-      </body>
+      
+        <script>
+          const galleryItems = document.querySelectorAll('.gallery-item');
+          const modal = document.getElementById('imageModal');
+          const modalImage = document.getElementById('modalImage');
+          const modalDescription = document.getElementById('modalDescription');
+          const closeButton = document.querySelector('.close-button');
+      
+          galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+              const imageSrc = item.querySelector('img').src;
+              const description = item.querySelector('.image-description').textContent;
+      
+              modalImage.src = imageSrc;
+              modalDescription.textContent = description;
+              modal.style.display = 'block'; // Show the modal
+            });
+          });
+      
+          closeButton.addEventListener('click', () => {
+            modal.style.display = 'none'; // Hide the modal
+          });
+      
+          // Close the modal if the user clicks outside of it
+          window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+              modal.style.display = 'none';
+            }
+          });
+        </script>
+</body>
   </html>
