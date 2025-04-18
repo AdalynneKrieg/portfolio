@@ -4,11 +4,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  display: flex; /* Enable flexbox for body content alignment */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
-  margin: 0; /* Remove default body margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #301934; /* Dark purple background fallback */
 }
 
 .container {
@@ -16,44 +17,58 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px; /* Keep the top padding for spacing */
-  width: 100%; /* Allow container to take full width to center its children effectively */
+  padding-top: 20px;
+  width: 100%;
 }
 
 .box {
-  border: 1px solid black;
+  border: 1px solid #4B0082; /* Darker purple border */
   padding: 20px;
   margin: 10px 0;
   width: 80%;
   max-width: 600px;
   text-align: center;
   box-sizing: border-box;
-  background-color: white;
+  background-color: #800080; /* Medium purple box background */
+  color: #E0B0FF; /* Light purple text color */
+  position: relative; /* Important for positioning the pseudo-elements */
 }
 
-  .box::before {
-    content: ''; /* Pseudo-elements need a content property */
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 2px solid blue; /* Style your frame here */
-    pointer-events: none; /* Make sure it doesn't interfere with clicks */
-    z-index: -1; /* Place it behind the box content */
-  }
+.box h2 {
+  color: #DDA0DD; /* Light purple heading color */
+}
 
-  .box::after {
-    content: ''; /* Pseudo-elements need a content property */
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px dashed green; /* You can have a different style for a second frame */
-    pointer-events: none; /* Make sure it doesn't interfere with clicks */
-    z-index: -2; /* Place it behind the first frame */
-  }
+.box a {
+  color: #BA55D3; /* Medium light purple link color */
+}
+
+.box a:hover {
+  color: #EE82EE; /* Lighter purple on hover */
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #9400D3; /* Deep purple frame */
+  pointer-events: none;
+  z-index: -1;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px dashed #A020F0; /* Bright purple dashed frame */
+  pointer-events: none;
+  z-index: -2;
+}
 </style>
 
 <div class="container">
