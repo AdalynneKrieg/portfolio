@@ -1,32 +1,35 @@
 <style>
   body {
-    background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+  background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex; /* Enable flexbox for body content alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+  margin: 0; /* Remove default body margin */
+}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding-top: 20px;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px; /* Keep the top padding for spacing */
+  width: 100%; /* Allow container to take full width to center its children effectively */
+}
 
-  .box {
-    border: 1px solid black;
-    padding: 20px;
-    margin: 10px 0;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: white;
-    position: relative; /* Important for positioning the pseudo-elements */
-  }
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px 0;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: white;
+}
 
   .box::before {
     content: ''; /* Pseudo-elements need a content property */
