@@ -1,19 +1,33 @@
 body {
-  font-family: sans-serif; /* A common and readable default font */
-  line-height: 1.6; /* Improves readability of text */
-  margin: 20px; /* Adds some overall margin around the page content */
-  background-color: #f4f4f4; /* A light grey background for the entire page (optional) */
+  font-family: sans-serif; /* Keeping the default from before or adjust as needed */
+  line-height: 1.6;
+  margin: 20px; /* Or adjust if you don't want default body margin */
+  background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.content-box {
-  background-color: white; /* Sets the background to white */
-  color: black; /* Sets the text color to black */
-  border: 1px solid #ccc; /* Adds a subtle grey border (optional) */
-  padding: 20px; /* Creates some space inside the box */
-  margin-bottom: 20px; /* Adds space below each box to separate them */
-  border-radius: 5px; /* Rounds the corners of the box (optional) */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 20px;
 }
 
+.box {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px 0;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: white;
+}
 /* You can add more global styles here for other elements like headings, paragraphs, etc. */
 h1, h2, h3 {
   color: #333; /* Dark grey for headings */
