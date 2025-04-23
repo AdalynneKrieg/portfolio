@@ -1,0 +1,40 @@
+body {
+  font-family: sans-serif; /* A common and readable default font */
+  line-height: 1.6; /* Improves readability of text */
+  margin: 20px; /* Adds some overall margin around the page content */
+  background-color: #f4f4f4; /* A light grey background for the entire page (optional) */
+}
+
+.content-box {
+  background-color: white; /* Sets the background to white */
+  color: black; /* Sets the text color to black */
+  border: 1px solid #ccc; /* Adds a subtle grey border (optional) */
+  padding: 20px; /* Creates some space inside the box */
+  margin-bottom: 20px; /* Adds space below each box to separate them */
+  border-radius: 5px; /* Rounds the corners of the box (optional) */
+}
+
+/* You can add more global styles here for other elements like headings, paragraphs, etc. */
+h1, h2, h3 {
+  color: #333; /* Dark grey for headings */
+  margin-top: 0; /* Remove default top margin for headings */
+  margin-bottom: 10px; /* Add some bottom margin for spacing */
+}
+
+p {
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+}
+
+ul, ol {
+  margin-left: 20px; /* Indent lists */
+  margin-bottom: 15px;
+}
+
+a {
+  color: blue; /* Default link color */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover for better usability */
+}
