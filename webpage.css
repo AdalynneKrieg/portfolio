@@ -1,54 +1,93 @@
 body {
-  font-family: Gill Sans, sans-serif; /* Keeping the default from before or adjust as needed */
-  line-height: 1.6;
-  margin: 20px; /* Or adjust if you don't want default body margin */
-  background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    font-family: Gill Sans, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 20px;
 }
 
 .box {
-  border: 1px solid black;
-  padding: 20px;
-  margin: 10px 0;
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: white;
 }
-/* You can add more global styles here for other elements like headings, paragraphs, etc. */
+
 h1, h2, h3 {
-  color: #333; /* Dark grey for headings */
-  margin-top: 0; /* Remove default top margin for headings */
-  margin-bottom: 10px; /* Add some bottom margin for spacing */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 p {
-  margin-bottom: 15px; /* Add spacing between paragraphs */
+    margin-bottom: 15px;
 }
 
 ul, ol {
-  margin-left: 20px; /* Indent lists */
-  margin-bottom: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
 }
 
 a {
-  color: blue; /* Default link color */
-  text-decoration: none; /* Remove underlines from links */
+    color: blue;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Add underline on hover for better usability */
+    text-decoration: underline;
+}
+
+/* New CSS for the navigation bar */
+.navigation {
+    background-color: #f0f0f0; /* Light grey background for the bar */
+    padding: 10px 0; /* Add some vertical padding */
+    margin-bottom: 20px; /* Add space below the navigation bar */
+    width: 100%; /* Make it span the full width */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+.navigation ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange list items horizontally */
+    justify-content: center; /* Center the tabs */
+}
+
+.navigation li {
+    margin: 0 15px; /* Add horizontal spacing between tabs */
+}
+
+.navigation li a {
+    color: #333; /* Dark grey text for the links */
+    display: block; /* Make the entire list item clickable */
+    padding: 8px 15px; /* Add padding inside the tabs */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.navigation li a:hover {
+    background-color: #ddd; /* Light grey background on hover */
+    text-decoration: none; /* Remove underline on hover for this style */
+}
+
+/* Optional: Style for the active tab */
+.navigation li a.active {
+    background-color: #ccc; /* Slightly darker background for the active tab */
+    color: white;
 }
