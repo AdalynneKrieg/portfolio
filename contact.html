@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-  <html>
-      <head>
-          <title>Contact</title>
-      </head>
+<html>
+<head>
+    <title>Contact</title>
     <link rel="stylesheet" href="webpage.css">
 <style>
-      body {
-        background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg); 
+    body {
+        background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-      }
+    }
 
-      .container {
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -20,22 +19,22 @@
         min-height: 100vh;
         margin: 0;
         padding-top: 20px;
-      }
+    }
 
-      .box {
+    .box {
         border: 1px solid black;
         padding: 20px;
         margin: 10px 0;
         width: 80%;
         max-width: 600px;
-        text-align: center;
+        text-align: left; /* Align text within the form to the left for better readability */
         box-sizing: border-box;
         background-color: white;
-      }
-    </style>
-  </head>
+    }
+</style>
+</head>
 
-  <body>
+<body>
     <nav class="navigation">
         <ul>
             <li><a href="home.html">Home</a></li>
@@ -45,39 +44,39 @@
             <li><a href="greetings.html">About Me</a></li>
         </ul>
     </nav>
-      <h3>Contact Submission</h3>
-      
-            <form action="https://formspree.io/f/xdkewapg" method="post">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required> <span style="color: red;">*</span>
-                </div>
-            </br>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required> <span style="color: red;">*</span>
-                </div>
-            </br>
-                <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone">
-              </div>
-            </br>
-              <div>
-                    <label>Establishment Name / Self Employed:</label><br>
-                    <input type="checkbox" id="self_employed" name="establishment_type" value="Self-employed">
-                    <label for="self_employed">Self-employed</label><br>
-                    <input type="checkbox" id="other" name="establishment_type" value="Other">
-                    <label for="other">Other:</label>
-                    <input type="text" id="other_establishment" name="other_establishment">
-              </div>
-            </br>
+    <h3>Contact Submission</h3>
+
+    <div class="box"> <form action="https://formspree.io/f/xdkewapg" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required> <span style="color: red;">*</span>
+            </div>
+        </br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required> <span style="color: red;">*</span>
+            </div>
+        </br>
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+        </div>
+        </br>
+            <div>
+                <label>Establishment Name / Self Employed:</label><br>
+                <input type="checkbox" id="self_employed" name="establishment_type" value="Self-employed">
+                <label for="self_employed">Self-employed</label><br>
+                <input type="checkbox" id="other" name="establishment_type" value="Other">
+                <label for="other">Other:</label>
+                <input type="text" id="other_establishment" name="other_establishment">
+            </div>
+        </br>
         <div>
-          <label for="comments">Additional Comments:</label> <br/>
-          <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+            <label for="comments">Additional Comments:</label> <br/>
+            <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
         </div>
             </br>
         <button type="submit">Submit</button>
-      </form>
-  </body>
-  </html>
+    </form>
+    </div> </body>
+</html>
