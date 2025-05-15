@@ -6,33 +6,50 @@
     <title>Adalynne Krieg - About Me</title>
     <link rel="stylesheet" href="webpage.css">
     <style>
-      body {
-        background-image: url(https://t3.ftcdn.net/jpg/03/26/66/74/360_F_326667412_czr7N1T5YYBaQP8ZFocYVvdc6DzofI88.jpg); 
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-      }
+          /* Styles for the main content area when banners are present */
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 20px; /* Space on the far left/right of the page */
+            gap: 20px; /* Space BETWEEN banners and main content */
+            margin-top: 20px; /* Optional: Space below your navigation */
+        }
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding-top: 20px;
-      }
+        /* Styles for the banner panels themselves */
+        .banner {
+            width: 18%; /* Adjust as you like */
+            display: block;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 5px;
+            box-sizing: border-box;
+        }
 
-      .box {
-        border: 1px solid black;
-        padding: 20px;
-        margin: 10px 0;
-        width: 80%;
-        max-width: 600px;
-        text-align: center;
-        box-sizing: border-box;
-        background-color: white;
-      }
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 70vh; /* Optional: Prevents banners being too tall */
+            object-fit: cover;
+        }
+        /* Adjustments for your existing .container and .box
+           ONLY for the page with banners, if needed.
+           These will override styles from webpage.css for this page only. */
+        .container {
+            flex-grow: 1; /* Allows central content to take available space */
+            max-width: 600px;
+            margin: 0; /* Remove default margins if any from webpage.css to let content-wrapper handle it */
+            padding-top: 0; /* If you had padding-top in webpage.css for .container */
+             /* If .container in webpage.css has min-height: 100vh, you might want to change it here: */
+            /* min-height: auto;  */
+        }
+        .box {
+            width: 100%;
+             /* If .box in webpage.css has a max-width, and you moved it to .container for this page: */
+            /* max-width: none; */
+        }
     </style>
   </head>
 
@@ -46,6 +63,12 @@
             <li><a href="greetings.html">About Me</a></li>
         </ul>
     </nav>
+  
+    <div class="content-wrapper">
+        <a href="gallery.html" class="banner left-banner">
+            <img src="images/skellyhead.JPG" alt="Artwork from gallery - click to see more">
+        </a>
+      
     <div class="container">
       <div class="box">
         <h2>Home</h2>
@@ -59,6 +82,10 @@
           I am looking for any and all advice, suggestions, connections and mentors, so please feel free to reach out using the <a href="contact.html">Contact</a> page.<br/>
         </p>
       </div>
+      
+        <a href="gallery.html" class="banner right-banner">
+            <img src="images/skellybody.JPG" alt="Artwork from gallery - click to see more">
+        </a>
     </div>
   </body>
 </html>
